@@ -1,24 +1,26 @@
 
 
-const alunos = [
-    ['Ana', 'Pedro', 'Guilherme'],
-    [7,4,5]
-];
+const alunos = ['Ana', 'Pedro', 'Guilherme'];
+const medias = [1,4,6];
 
+const listaAlunosMedias = [alunos, medias];
 
-function nomeAluno (nome) {
+function nomeAluno (aluno) {
 
-    if (nome == 'Ana') {
-        return `A média de ${alunos[0][0]} é de ${alunos[1][0]}`
-    } else if (nome == 'Pedro') {
-        return `A média de ${alunos[0][1]} é de ${alunos[1][1]}`
-    } else if (nome == 'Guilherme') {
-        return `A média de ${alunos[0][2]} é de ${alunos[1][2]}`
+    if (listaAlunosMedias[0].includes(aluno)) {
+        console.log(`${aluno} esta cadastrado!`);
+
+        const indice = listaAlunosMedias[0].indexOf(aluno);
+
+        const mediaDoAluno = listaAlunosMedias[1][indice];
+        console.log(mediaDoAluno);
     } else {
-        return 'Aluno não encontrado'
+        console.log(`Aluno não encontrado!`);
     }
+
 }
 
-console.log(nomeAluno('Ana'));
-console.log(nomeAluno('Pedro'));
-console.log(nomeAluno('Guilherme'));
+nomeAluno('Ana');
+
+
+
